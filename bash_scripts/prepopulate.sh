@@ -13,18 +13,18 @@ for month in {01..09}; do
 	fileName="log_2017-$month-$day.txt"
 
 	# First create files/delete file's content
-	echo > ../$fileName
+	echo > $fileName
 	
 	# Generate random input to prepopulate files
 	for line in {1..7}; do
 	    content=$(( (RANDOM % 30) + 1))
-	    echo "Line #$line: = $content;" >> ../$fileName
+	    echo "Line #$line: = $content;" >> $fileName
         done
 
 	# Debug output
 	drawSeparator	
-	#echo "File overwritten: $(readlink -f ../fileName) with:"
-	cat ../$fileName
+	echo "File overwritten: $(readlink -f fileName) with:"
+	cat $fileName
 	drawSeparator
 	printf "\n"
 
